@@ -31,8 +31,8 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: node-app              # nome do artefato
-          path: dist/projetoLeoDemo   # build do Angular (onde está o index.html)
+          name: node-app                # nome do artefato
+          path: dist/projetoLeoDemo     # SOMENTE a build do Angular
 
   deploy:
     runs-on: ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-          path: .        # extrai em ./node-app por padrão
+          path: .        # extrai direto na pasta atual (./index.html, ./assets, etc.)
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -61,4 +61,4 @@ jobs:
         with:
           app-name: 'projetoLeoDemo'
           slot-name: 'Production'
-          package: node-app   # pasta onde o artifact foi extraído (contém index.html)
+          package: .      # AQUI é a pasta atual, onde estão index.html e os bundles
