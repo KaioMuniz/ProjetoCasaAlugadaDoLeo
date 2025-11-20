@@ -1,59 +1,23 @@
-# ProjetoLeoDemo
+## Demonstração de Site – Casas de Temporada
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.
+Desenvolvi esta demonstração de site para um cliente do ramo de locação de imóveis por temporada.  
+O objetivo era apresentar um exemplo simples de layout para divulgação das 9 casas que ele possui para alugar.
+Com base nesse protótipo, o cliente conseguiu visualizar a proposta de forma clara e decidiu fechar o projeto completo.
+Projeto feito em Angular 20.
 
-## Development server
 
-To start a local development server, run:
+<a href="#">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmxvdGljZGtvdTFiejVwOTl2YW8wdGw0N3A5cnhoaGw4eGZzcHNhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pHDzlGg4h6LVj7nTtD/giphy.gif" alt="Assista ao vídeo" width="360">
+      </a>
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+      
+<a href="#">
+        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2xlcHJoam90OHEyNmx6NXY4eWw1ODIxanU2MWhvbmJsdG1jNTdqOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zbAjofERkgXBlLHfNP/giphy.gif" alt="Assista ao vídeo" width="360">
+      </a>
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Contato
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Nome:** Kaio Muniz  
+- **E-mail:** kkaioribeiro@gmail.com
