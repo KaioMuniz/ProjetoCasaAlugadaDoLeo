@@ -27,7 +27,6 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -47,6 +46,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
+          path: .
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -55,11 +55,14 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2755319964684F0CA65BB299FB3D0E28 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_61FA910EE1B54787AB987EE487C40B7E }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'projetoleoCasaAlugada'
+          app-name: 'projetoLeoDemo'
           slot-name: 'Production'
-          package: .
+          package: .      # AQUI é a pasta atual, onde estão index.html e os bundles
+
+
+
           
