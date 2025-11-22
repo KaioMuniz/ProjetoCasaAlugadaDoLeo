@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     permissions:
       contents: read #This is required for actions/checkout
 
@@ -27,12 +27,13 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-      
+          npm run test --if-present
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: ./dist # Caminho da build do Angular
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
@@ -46,19 +47,19 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-          path: ./dist # Caminho da build extraída
-
+      
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_46F264E4B0AD4A018D17E752DC6E6233 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2755319964684F0CA65BB299FB3D0E28 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_61FA910EE1B54787AB987EE487C40B7E }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_8E15D137AF3649469C7B6586C30A5E25 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8E7828882736455C9D6FDB02B13C4946 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1348DB48AF2A4010BBF3004592A05C79 }}
 
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
+      - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'projetoleoCasaAlugada'
           slot-name: 'Production'
-          package: ./dist # Aqui é a pasta onde a build foi gerada
+          package: .
+          
